@@ -10,13 +10,34 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+reps = 0
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
-    count_down(5 * 60)
+    global reps
+    reps += 1
+
+    work_sec = 10#WORK_MIN * 60
+    short_break_sec = 4#SHORT_BREAK_MIN * 60
+    long_break_sec = 5#LONG_BREAK_MIN * 60
+
+    # Work and break mechanism
+
+    # If it's the 1st/3rd/5th/7th rep:
+    if reps % 2 != 0:
+        count_down(work_sec)
+        main_text.config(text="Work", fg=GREEN)
+    # If it's the 8th rep:
+    elif reps % 8 == 0:
+        count_down(long_break_sec)
+        main_text.config(text="Break", fg=RED)
+    # If it's the 2nd/4th/6th:
+    else:
+        count_down(short_break_sec)
+        main_text.config(text="Break", fg=PINK)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -25,15 +46,21 @@ def count_down(count):
     minute = floor(count / 60)
     second = count % 60
     # Making sure that text is properly displayed
-    if second == 0:
-        second = "00"
-    elif second < 10:
+    if second < 10:
         second = f"0{second}"
 
     canvas.itemconfig(timer_text, text=f"{minute}:{second}")
     if count > 0:
         window.after(1000, count_down, count - 1)
+    else:
+        # Restarting the timer after count down goes to 0
+        start_timer()
 
+        # Adding checkmark for every work session completed
+        marks = ""
+        for i in range(floor(reps / 2)):
+            marks += "✔"
+        check_marks.config(text=marks)
 
 # ---------------------------- UI SETUP ------------------------------- #
 # Window
@@ -45,7 +72,7 @@ window.config(padx=80, pady=50, bg=YELLOW)
 main_text = Label(text="Timer", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 50, "bold"))
 main_text.grid(column=1, row=0)
 
-check_marks = Label(text="✔", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 15))
+check_marks = Label(bg=YELLOW, fg=GREEN, font=(FONT_NAME, 15))
 check_marks.grid(column=1, row=3)
 
 # Canvas
