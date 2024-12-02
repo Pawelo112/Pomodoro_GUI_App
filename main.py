@@ -24,6 +24,11 @@ def count_down(count):
 
     minute = floor(count / 60)
     second = count % 60
+    # Making sure that text is properly displayed
+    if second == 0:
+        second = "00"
+    elif second < 10:
+        second = f"0{second}"
 
     canvas.itemconfig(timer_text, text=f"{minute}:{second}")
     if count > 0:
