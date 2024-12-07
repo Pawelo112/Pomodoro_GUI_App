@@ -5,7 +5,8 @@
 ## 📖 Description 
 This is a simple time management app that I made in Python using Tkinter module, during **100 days of code** Python course.
 
-The Pomodoro Technique implemented in this app is a popular time management method that promotes focus and productivity by using a timer to break work into intervals, traditionally 25 minutes in length separated by short breaks. 
+The Pomodoro Technique implemented in this app is a popular time management method that promotes focus and productivity by using a timer to break work into intervals, traditionally 25 minutes in length separated by short breaks.
+
 If, like me, you easily fall into the trap of procrastination, this technique can help you a lot and make your work and effort much more effective.  
 
 Here's an overview of how the technique works, along with its advantages:
