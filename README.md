@@ -1,5 +1,5 @@
 # 🍅Pomodoro Technique - Simple Time Management App
-![Screenshot from the app.](https://github.com/user-attachments/assets/cb1cb43e-67f9-4b77-b196-f038df4a13c5))
+![Screenshot from the app.](https://github.com/user-attachments/assets/cb1cb43e-67f9-4b77-b196-f038df4a13c5)
 
 
 ## 📖 Description 
