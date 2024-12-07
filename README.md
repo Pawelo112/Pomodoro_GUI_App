@@ -1,4 +1,4 @@
-# Pomodoro Technique - Simple Time Management App
+# 🍅Pomodoro Technique - Simple Time Management App
 ![Screenshot from the app.](https://github.com/user-attachments/assets/cb1cb43e-67f9-4b77-b196-f038df4a13c5))
 
 
@@ -26,4 +26,4 @@ You can find the latest release here: [releases](https://github.com/Pawelo112/Po
 ## 📝 License
 
 Copyright © 2024 [Paweł Marcinkowski](https://github.com/Pawelo112).  
-This project is [MIT](https://github.com/Pawelo112/Simple-snake-game-in-Python/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/Pawelo112/Pomodoro_GUI_App/blob/main/LICENSE) licensed.
